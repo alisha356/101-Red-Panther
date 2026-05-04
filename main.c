@@ -18,6 +18,7 @@ int main() {
         printf("Failed to start camera\n");
         return 1;
     }
+    
   //int err = init(0);
   //cout<<"Error: "<<err<<endl;
   //open_screen_stream();
@@ -41,6 +42,9 @@ int main() {
 	}
 
 	printf(" countrun: =%d\n",countrun);
+	printf(" total red: =%d\n",totRed);
+	printf(" total intensity: =%d\n",totInt);
+	printf(" redness: =%f\n",redness);
 	//cout<<" Total red: "<<totRed<<endl;
 	//cout<<", Total intensity: "<<totInt<<endl;
 	//cout<<", redness : "<<redness<<endl<<endl;
