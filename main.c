@@ -6,11 +6,14 @@
  * */
 
 
+// Arthur solid on the position of red pixels - forget averaging
+// Howard solid on the value of green and blue reflected by the white paper
+
+
 
 #include <stdio.h>
+// #include <unistd.h>		// For sleep
 #include "camera_x11.h"
-
-//using namespace std;
 
 int main() {
 	
@@ -18,39 +21,31 @@ int main() {
         printf("Failed to start camera\n");
         return 1;
     }
-    
-  //int err = init(0);
-  //cout<<"Error: "<<err<<endl;
-  //open_screen_stream();
+
   
   // make 1000 runs  
   for (int countrun = 0; countrun < 1000; countrun++) {
 	take_picture();
 	display_picture();
-	int totRed = 0;
-	int totInt = 0;
-	double redness = 0.0;
+	int redPx = 0; 
+
     // for all pixels in latest image
     for (int row = 0 ; row < 480 ; row++) {	
 		for (int col = 0; col < 640; col++) {
 			uchar r, g ,b ;
 			get_pixel(row, col, &r, &g ,&b);
-			totRed = totRed + r;
-			totInt = totInt + (r+g+b)/3;
-			redness = (double)totRed/(3.0*(double)totInt);
+			// printf("R: %d G: %d B: %d\n", r, g, b);
+			if (r > (g+10) && r > (b+10)) {
+				// printf("Red pixel at row: %d and col: %d\n", row, col);
+				redPx += 1;
+			}
 		}
 	}
 
-	printf(" countrun: =%d\n",countrun);
-	printf(" total red: =%d\n",totRed);
-	printf(" total intensity: =%d\n",totInt);
-	printf(" redness: =%f\n",redness);
-	//cout<<" Total red: "<<totRed<<endl;
-	//cout<<", Total intensity: "<<totInt<<endl;
-	//cout<<", redness : "<<redness<<endl<<endl;
-	//sleep1(1000); // slow down a bit to make display easier
-	
-  }  
-  //close_screen_stream();
+	printf("Countrun: %d\n",countrun);
+	printf("Red px: %d\n", redPx);
+  }
+
+
   return 0;
 }
