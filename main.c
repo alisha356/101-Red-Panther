@@ -46,11 +46,10 @@ int main() {
 			}
 		}
 
-		if (redPx < 20000 && runs > 2) {
+		if ((redPx < 20000 || redPx > 28000) && runs > 6) {
 			rubyStolen = True;
 			printf("Ruby stolen!");
 		}
-
 
 		printf("Red px: %d\n", redPx);
 	}
