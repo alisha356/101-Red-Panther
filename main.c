@@ -34,21 +34,23 @@ int main() {
 		runs += 1;
 
 		// for all pixels in latest image
-		for (int row = 0 ; row < 480 ; row++) {	
+		for (int row = 0 ; row < 480 ; row++) {
 			for (int col = 0; col < 640; col++) {
-				uchar r, g ,b ;
-				get_pixel(row, col, &r, &g ,&b);
-				// printf("R: %d G: %d B: %d\n", r, g, b);
-				if (r > (g+10) && r > (b+10)) {
-					// printf("Red pixel at row: %d and col: %d\n", row, col);
-					redPx += 1;
+				if (row > 60 && row < 420 && col > 80 && col < 560) {
+					uchar r, g ,b ;
+					get_pixel(row, col, &r, &g ,&b);
+					// printf("R: %d G: %d B: %d\n", r, g, b);
+					if (r > (g+10) && r > (b+10)) {
+						// printf("Red pixel at row: %d and col: %d\n", row, col);
+						redPx += 1;
+					}
 				}
 			}
 		}
 
 		if ((redPx < 20000 || redPx > 28000) && runs > 6) {
 			rubyStolen = True;
-			printf("Ruby stolen!");
+			printf("Ruby stolen!\n");
 		}
 
 		printf("Red px: %d\n", redPx);
