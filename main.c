@@ -13,8 +13,10 @@
 
 #include <stdio.h>
 #include <stdbool.h>
-// #include <unistd.h>		// For sleep
+#include <unistd.h>
+#include <string.h>
 #include "camera_x11.h"
+
 
 
 // To test, should work 
@@ -76,10 +78,11 @@ int main() {
 		}
 		printf("Red px: %d\n", redPx);
 	}
-
-	setScreenRed();   // To test, should work
-	display_picture();
-	sleep(2)
+	if (runs == 6) {
+		setScreenRed();   // To test, should work (hopefully)
+		display_picture();
+		sleep(2);
+	}
 
   return 0;
 }
