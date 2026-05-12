@@ -27,6 +27,16 @@ static void setGreenRect() {
 }
 
 
+// To test, should work
+static void setScreenRed() {
+	for (int row = 0; row < 480; row++) {
+		for (int col = 0; col < 640; col++) {
+			set_pixel(row, col, 255, 0, 0);
+		}
+	}
+}
+
+
 
 int main() {
 	if (start_camera() != 0) {
@@ -64,9 +74,12 @@ int main() {
 			rubyStolen = True;
 			printf("Ruby stolen!\n");
 		}
-
 		printf("Red px: %d\n", redPx);
 	}
+
+	setScreenRed();   // To test, should work
+	display_picture();
+	sleep(2)
 
   return 0;
 }
