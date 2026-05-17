@@ -180,6 +180,7 @@ int main() {
 	time_t raw_time;
 	struct tm *info;
 
+	FILE *fptr;
 	
 	bool rubyStolen = False;
 	int runs = 0;
@@ -232,13 +233,23 @@ int main() {
 				checkChar(currentTime[15]);
 				shift = 0;
 
+				fptr = fopen("rubyLogFile.txt", "w");
+				if (fptr == NULL) {
+					printf("Error: Could not create file.\n");
+					return 1;
+				}
+				printf("File created successfully!\n");
+
+				fprintf(fptr, "Stolen at %s", currentTime);
+				fclose(fptr);
+
 				display_picture();
 				rubyStolen = True;
 				sleep(10);
 			}
 		}
-		// printf("Red px: %d\n", redPx);
-		printf("time with variable: %c%c:%c%c\n", currentTime[11], currentTime[12], currentTime[14], currentTime[15]); 
+		printf("Red px: %d\n", redPx);
+		// printf("time with variable: %c%c:%c%c\n", currentTime[11], currentTime[12], currentTime[14], currentTime[15]); 
 	}
 
   return 0;
