@@ -165,7 +165,7 @@ int main() {
 
 	while (rubyStolen == False) {
 		take_picture();
-		setGreenRect();   // To test, should work 
+		setGreenRect();
 		display_picture();
 		int redPx = 0; 
 
@@ -192,9 +192,11 @@ int main() {
 				display_picture();
 				sleep(2);
 			}
-			sleep(10);
-			rubyStolen = True;
+			take_picture();
+			display_picture();
 			printf("Ruby stolen!\n");
+			rubyStolen = True;
+			sleep(10);
 		}
 		// printf("Red px: %d\n", redPx);
 	}
