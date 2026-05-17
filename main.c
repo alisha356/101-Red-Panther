@@ -203,8 +203,8 @@ int main() {
 				if (row > 60 && row < 420 && col > 80 && col < 560) {
 					uchar r, g ,b ;
 					get_pixel(row, col, &r, &g ,&b);
-					// printf("R: %d G: %d B: %d\n", r, g, b);
-					if (r > (g+10) && r > (b+10)) {
+					if (r > (g+20) && r > (b+20)) {
+						// printf("R: %d G: %d B: %d\n", r, g, b);
 						// printf("Red pixel at row: %d and col: %d\n", row, col);
 						redPx += 1;
 					}
@@ -212,11 +212,12 @@ int main() {
 			}
 		}
 
-		if ((redPx < 20000 || redPx > 28000) && runs > 10) {
+		if ((redPx < 18500 || redPx > 23000) && runs > 10) {
 			if (runs > 10 && runs < 15) {
 				setScreenRed();
 				display_picture();
-				sleep(2);
+				sleep(5);
+				rubyStolen = True;
 			}
 			else {
 				take_picture();
@@ -248,8 +249,7 @@ int main() {
 				sleep(10);
 			}
 		}
-		printf("Red px: %d\n", redPx);
-		// printf("time with variable: %c%c:%c%c\n", currentTime[11], currentTime[12], currentTime[14], currentTime[15]); 
+		// printf("Red px: %d\n", redPx);
 	}
 
   return 0;
