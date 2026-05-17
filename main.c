@@ -18,12 +18,14 @@
 #include <time.h>
 #include "camera_x11.h"
 
+
 // {row, col} = {y, x}
 int timeCoordsFirst[6][2] = {
 	{215, 185}, {215, 210},
 	{240, 185}, {240, 210},
 	{265, 185}, {265, 210}
 };
+
 
 // Shift for which int is being drawn in the time (0 through 3)
 int shift = 0;
@@ -46,7 +48,7 @@ static void setScreenRed() {
 	}
 }
 
-// To test, don't know if it'll work
+
 static void drawLine(const char *direction, int row, int col) {
 	int length = 25;
 	if (strcmp(direction, "horizontal") == 0) {
@@ -64,7 +66,6 @@ static void drawLine(const char *direction, int row, int col) {
 }
 
 
-// Hopes and prayers for the follwoing functions
 static void drawZero() {
 	drawLine("horizontal", timeCoordsFirst[0][0], timeCoordsFirst[0][1] + 35*shift);
 	drawLine("vertical", timeCoordsFirst[0][0], timeCoordsFirst[0][1] + 35*shift);
@@ -73,6 +74,7 @@ static void drawZero() {
 	drawLine("vertical", timeCoordsFirst[1][0], timeCoordsFirst[1][1] + 35*shift);
 	drawLine("vertical", timeCoordsFirst[3][0], timeCoordsFirst[3][1] + 35*shift);
 }
+
 
 static void drawOne() {
 	drawLine("vertical", timeCoordsFirst[0][0], timeCoordsFirst[0][1] + 35*shift);
@@ -154,36 +156,16 @@ static void drawNine() {
 
 
 static void checkChar(char character) {
-	if (character == '0'){
-		drawZero();
-	}
-	else if (character == '1'){
-		drawOne();
-	}
-	else if (character == '2') {
-		drawTwo();
-	}
-	else if (character == '3') {
-		drawThree();
-	}
-	else if (character == '4') {
-		drawFour();
-	}
-	else if (character == '5') {
-		drawFive();
-	}
-	else if (character == '6') {
-		drawSix();
-	}
-	else if (character == '7') {
-		drawSeven();
-	}
-	else if (character == '8') {
-		drawEight();
-	}
-	else if (character == '9') {
-		drawNine();
-	}
+	if (character == '0'){ drawZero(); }
+	else if (character == '1'){ drawOne(); }
+	else if (character == '2') { drawTwo(); }
+	else if (character == '3') { drawThree(); }
+	else if (character == '4') { drawFour(); }
+	else if (character == '5') { drawFive(); }
+	else if (character == '6') { drawSix(); }
+	else if (character == '7') { drawSeven(); }
+	else if (character == '8') { drawEight(); }
+	else if (character == '9') { drawNine(); }
 }
 
 
@@ -242,6 +224,8 @@ int main() {
 				checkChar(currentTime[11]);
 				shift++;
 				checkChar(currentTime[12]);
+				shift++;
+				drawLine("horizontal", timeCoordsFirst[2][0], timeCoordsFirst[2][1] + 35*shift);
 				shift++;
 				checkChar(currentTime[14]);
 				shift++;
