@@ -28,7 +28,7 @@ int timeCoordsFirst[6][2] = {
 // Shift for which int is being drawn in the time (0 through 3)
 int shift = 0;
 
-// To test, should work 
+
 static void setGreenRect() {
 	for (int row = 0; row < 50; row++) {
 		for (int col = 0; col < 70; col++) {
@@ -38,7 +38,6 @@ static void setGreenRect() {
 }
 
 
-// To test, should work
 static void setScreenRed() {
 	for (int row = 0; row < 480; row++) {
 		for (int col = 0; col < 640; col++) {
@@ -187,17 +186,17 @@ int main() {
 			}
 		}
 
-		if ((redPx < 20000 || redPx > 28000) && runs > 6) {
+		if ((redPx < 20000 || redPx > 28000) && runs > 10) {
+			if (runs > 10 && runs < 15) {
+				setScreenRed();
+				display_picture();
+				sleep(2);
+			}
+			sleep(10);
 			rubyStolen = True;
 			printf("Ruby stolen!\n");
 		}
-		printf("Red px: %d\n", redPx);
-	}
-
-	if (runs == 6) {
-		setScreenRed();   // To test, should work (hopefully)
-		display_picture();
-		sleep(2);
+		// printf("Red px: %d\n", redPx);
 	}
 
   return 0;
