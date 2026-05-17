@@ -93,9 +93,9 @@ static void drawTwo() {
 
 static void drawThree() {
 	drawLine("horizontal", timeCoordsFirst[0][0], timeCoordsFirst[0][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[0][0], timeCoordsFirst[0][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[1][0], timeCoordsFirst[1][1] + 35*shift);
 	drawLine("horizontal", timeCoordsFirst[2][0], timeCoordsFirst[2][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[2][0], timeCoordsFirst[2][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[3][0], timeCoordsFirst[3][1] + 35*shift);
 	drawLine("horizontal", timeCoordsFirst[4][0], timeCoordsFirst[4][1] + 35*shift);
 }
 
@@ -169,8 +169,6 @@ static void checkChar(char character) {
 }
 
 
-
-
 int main() {
 	if (start_camera() != 0) {
         printf("Failed to start camera\n");
@@ -186,8 +184,8 @@ int main() {
 	int runs = 0;
 	
 	while (rubyStolen == False) {
-		time(&raw_time); // Get current time
-		info = localtime(&raw_time); // Convert to local time structure
+		time(&raw_time);
+		info = localtime(&raw_time);
 		char *currentTime = asctime(info);
 
 		take_picture();
@@ -197,15 +195,12 @@ int main() {
 
 		runs += 1;
 
-		// for all pixels in latest image
 		for (int row = 0 ; row < 480; row++) {
 			for (int col = 0; col < 640; col++) {
 				if (row > 60 && row < 420 && col > 80 && col < 560) {
 					uchar r, g ,b ;
 					get_pixel(row, col, &r, &g ,&b);
 					if (r > (g+20) && r > (b+20)) {
-						// printf("R: %d G: %d B: %d\n", r, g, b);
-						// printf("Red pixel at row: %d and col: %d\n", row, col);
 						redPx += 1;
 					}
 				}
@@ -239,7 +234,6 @@ int main() {
 					printf("Error: Could not create file.\n");
 					return 1;
 				}
-				printf("File created successfully!\n");
 
 				fprintf(fptr, "Stolen at %s", currentTime);
 				fclose(fptr);
@@ -249,7 +243,6 @@ int main() {
 				sleep(10);
 			}
 		}
-		// printf("Red px: %d\n", redPx);
 	}
 
   return 0;
