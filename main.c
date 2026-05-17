@@ -6,11 +6,6 @@
  * */
 
 
-// Arthur solid on the position of red pixels - forget averaging
-// Howard solid on the value of green and blue reflected by the white paper
-
-
-
 #include <stdio.h>
 #include <stdbool.h>
 #include <unistd.h>
