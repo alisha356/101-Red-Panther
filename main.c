@@ -66,91 +66,126 @@ static void drawLine(const char *direction, int row, int col) {
 
 // Hopes and prayers for the follwoing functions
 static void drawZero() {
-	drawLine("horizontal", timeCoordsFirst[0][0] + 35*shift, timeCoordsFirst[0][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[0][0] + 35*shift, timeCoordsFirst[0][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[2][0] + 35*shift, timeCoordsFirst[2][1] + 35*shift);
-	drawLine("horizontal", timeCoordsFirst[4][0] + 35*shift, timeCoordsFirst[4][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[1][0] + 35*shift, timeCoordsFirst[1][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[3][0] + 35*shift, timeCoordsFirst[3][1] + 35*shift);
+	drawLine("horizontal", timeCoordsFirst[0][0], timeCoordsFirst[0][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[0][0], timeCoordsFirst[0][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[2][0], timeCoordsFirst[2][1] + 35*shift);
+	drawLine("horizontal", timeCoordsFirst[4][0], timeCoordsFirst[4][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[1][0], timeCoordsFirst[1][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[3][0], timeCoordsFirst[3][1] + 35*shift);
 }
 
 static void drawOne() {
-	drawLine("vertical", timeCoordsFirst[0][0] + 35*shift, timeCoordsFirst[0][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[2][0] + 35*shift, timeCoordsFirst[2][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[0][0], timeCoordsFirst[0][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[2][0], timeCoordsFirst[2][1] + 35*shift);
 }
 
 
 static void drawTwo() {
-	drawLine("horizontal", timeCoordsFirst[0][0] + 35*shift, timeCoordsFirst[0][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[1][0] + 35*shift, timeCoordsFirst[1][1] + 35*shift);
-	drawLine("horizontal", timeCoordsFirst[2][0] + 35*shift, timeCoordsFirst[2][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[2][0] + 35*shift, timeCoordsFirst[2][1] + 35*shift);
-	drawLine("horizontal", timeCoordsFirst[4][0] + 35*shift, timeCoordsFirst[4][1] + 35*shift);
+	drawLine("horizontal", timeCoordsFirst[0][0], timeCoordsFirst[0][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[1][0], timeCoordsFirst[1][1] + 35*shift);
+	drawLine("horizontal", timeCoordsFirst[2][0], timeCoordsFirst[2][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[2][0], timeCoordsFirst[2][1] + 35*shift);
+	drawLine("horizontal", timeCoordsFirst[4][0], timeCoordsFirst[4][1] + 35*shift);
 }
 
 
 static void drawThree() {
-	drawLine("horizontal", timeCoordsFirst[0][0] + 35*shift, timeCoordsFirst[0][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[0][0] + 35*shift, timeCoordsFirst[0][1] + 35*shift);
-	drawLine("horizontal", timeCoordsFirst[2][0] + 35*shift, timeCoordsFirst[2][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[2][0] + 35*shift, timeCoordsFirst[2][1] + 35*shift);
-	drawLine("horizontal", timeCoordsFirst[4][0] + 35*shift, timeCoordsFirst[4][1] + 35*shift);
+	drawLine("horizontal", timeCoordsFirst[0][0], timeCoordsFirst[0][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[0][0], timeCoordsFirst[0][1] + 35*shift);
+	drawLine("horizontal", timeCoordsFirst[2][0], timeCoordsFirst[2][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[2][0], timeCoordsFirst[2][1] + 35*shift);
+	drawLine("horizontal", timeCoordsFirst[4][0], timeCoordsFirst[4][1] + 35*shift);
 }
 
 
 static void drawFour() {
-	drawLine("vertical", timeCoordsFirst[0][0] + 35*shift, timeCoordsFirst[0][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[1][0] + 35*shift, timeCoordsFirst[1][1] + 35*shift);
-	drawLine("horizontal", timeCoordsFirst[2][0] + 35*shift, timeCoordsFirst[2][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[3][0] + 35*shift, timeCoordsFirst[3][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[0][0], timeCoordsFirst[0][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[1][0], timeCoordsFirst[1][1] + 35*shift);
+	drawLine("horizontal", timeCoordsFirst[2][0], timeCoordsFirst[2][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[3][0], timeCoordsFirst[3][1] + 35*shift);
 }
 
 
 static void drawFive() {
-	drawLine("horizontal", timeCoordsFirst[0][0] + 35*shift, timeCoordsFirst[0][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[0][0] + 35*shift, timeCoordsFirst[0][1] + 35*shift);
-	drawLine("horizontal", timeCoordsFirst[2][0] + 35*shift, timeCoordsFirst[2][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[3][0] + 35*shift, timeCoordsFirst[3][1] + 35*shift);
-	drawLine("horizontal", timeCoordsFirst[4][0] + 35*shift, timeCoordsFirst[4][1] + 35*shift);
+	drawLine("horizontal", timeCoordsFirst[0][0], timeCoordsFirst[0][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[0][0], timeCoordsFirst[0][1] + 35*shift);
+	drawLine("horizontal", timeCoordsFirst[2][0], timeCoordsFirst[2][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[3][0], timeCoordsFirst[3][1] + 35*shift);
+	drawLine("horizontal", timeCoordsFirst[4][0], timeCoordsFirst[4][1] + 35*shift);
 }
 
 
 static void drawSix() {
-	drawLine("horizontal", timeCoordsFirst[0][0] + 35*shift, timeCoordsFirst[0][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[0][0] + 35*shift, timeCoordsFirst[0][1] + 35*shift);
-	drawLine("horizontal", timeCoordsFirst[2][0] + 35*shift, timeCoordsFirst[2][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[2][0] + 35*shift, timeCoordsFirst[2][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[3][0] + 35*shift, timeCoordsFirst[3][1] + 35*shift);
-	drawLine("horizontal", timeCoordsFirst[4][0] + 35*shift, timeCoordsFirst[4][1] + 35*shift);
+	drawLine("horizontal", timeCoordsFirst[0][0], timeCoordsFirst[0][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[0][0], timeCoordsFirst[0][1] + 35*shift);
+	drawLine("horizontal", timeCoordsFirst[2][0], timeCoordsFirst[2][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[2][0], timeCoordsFirst[2][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[3][0], timeCoordsFirst[3][1] + 35*shift);
+	drawLine("horizontal", timeCoordsFirst[4][0], timeCoordsFirst[4][1] + 35*shift);
 }
 
 
 static void drawSeven() {
-	drawLine("horizontal", timeCoordsFirst[0][0] + 35*shift, timeCoordsFirst[0][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[1][0] + 35*shift, timeCoordsFirst[1][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[3][0] + 35*shift, timeCoordsFirst[3][1] + 35*shift);
+	drawLine("horizontal", timeCoordsFirst[0][0], timeCoordsFirst[0][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[1][0], timeCoordsFirst[1][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[3][0], timeCoordsFirst[3][1] + 35*shift);
 }
 
 
 static void drawEight() {
-	drawLine("horizontal", timeCoordsFirst[0][0] + 35*shift, timeCoordsFirst[0][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[0][0] + 35*shift, timeCoordsFirst[0][1] + 35*shift);
-	drawLine("horizontal", timeCoordsFirst[2][0] + 35*shift, timeCoordsFirst[2][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[2][0] + 35*shift, timeCoordsFirst[2][1] + 35*shift);
-	drawLine("horizontal", timeCoordsFirst[4][0] + 35*shift, timeCoordsFirst[4][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[1][0] + 35*shift, timeCoordsFirst[1][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[3][0] + 35*shift, timeCoordsFirst[3][1] + 35*shift);
+	drawLine("horizontal", timeCoordsFirst[0][0], timeCoordsFirst[0][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[0][0], timeCoordsFirst[0][1] + 35*shift);
+	drawLine("horizontal", timeCoordsFirst[2][0], timeCoordsFirst[2][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[2][0], timeCoordsFirst[2][1] + 35*shift);
+	drawLine("horizontal", timeCoordsFirst[4][0], timeCoordsFirst[4][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[1][0], timeCoordsFirst[1][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[3][0], timeCoordsFirst[3][1] + 35*shift);
 }
 
 
 static void drawNine() {
-	drawLine("horizontal", timeCoordsFirst[0][0] + 35*shift, timeCoordsFirst[0][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[0][0] + 35*shift, timeCoordsFirst[0][1] + 35*shift);
-	drawLine("horizontal", timeCoordsFirst[2][0] + 35*shift, timeCoordsFirst[2][1] + 35*shift);
-	drawLine("horizontal", timeCoordsFirst[4][0] + 35*shift, timeCoordsFirst[4][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[1][0] + 35*shift, timeCoordsFirst[1][1] + 35*shift);
-	drawLine("vertical", timeCoordsFirst[3][0] + 35*shift, timeCoordsFirst[3][1] + 35*shift);
+	drawLine("horizontal", timeCoordsFirst[0][0], timeCoordsFirst[0][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[0][0], timeCoordsFirst[0][1] + 35*shift);
+	drawLine("horizontal", timeCoordsFirst[2][0], timeCoordsFirst[2][1] + 35*shift);
+	drawLine("horizontal", timeCoordsFirst[4][0], timeCoordsFirst[4][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[1][0], timeCoordsFirst[1][1] + 35*shift);
+	drawLine("vertical", timeCoordsFirst[3][0], timeCoordsFirst[3][1] + 35*shift);
 }
+
+
+static void checkChar(char character) {
+	if (character == '0'){
+		drawZero();
+	}
+	else if (character == '1'){
+		drawOne();
+	}
+	else if (character == '2') {
+		drawTwo();
+	}
+	else if (character == '3') {
+		drawThree();
+	}
+	else if (character == '4') {
+		drawFour();
+	}
+	else if (character == '5') {
+		drawFive();
+	}
+	else if (character == '6') {
+		drawSix();
+	}
+	else if (character == '7') {
+		drawSeven();
+	}
+	else if (character == '8') {
+		drawEight();
+	}
+	else if (character == '9') {
+		drawNine();
+	}
+}
+
 
 
 
@@ -160,10 +195,18 @@ int main() {
         return 1;
     }
 
+	time_t raw_time;
+	struct tm *info;
+
+	
 	bool rubyStolen = False;
 	int runs = 0;
-
+	
 	while (rubyStolen == False) {
+		time(&raw_time); // Get current time
+		info = localtime(&raw_time); // Convert to local time structure
+		char *currentTime = asctime(info);
+
 		take_picture();
 		setGreenRect();
 		display_picture();
@@ -192,13 +235,26 @@ int main() {
 				display_picture();
 				sleep(2);
 			}
-			take_picture();
-			display_picture();
-			printf("Ruby stolen!\n");
-			rubyStolen = True;
-			sleep(10);
+			else {
+				take_picture();
+				printf("Ruby stolen!\n");
+
+				checkChar(currentTime[11]);
+				shift++;
+				checkChar(currentTime[12]);
+				shift++;
+				checkChar(currentTime[14]);
+				shift++;
+				checkChar(currentTime[15]);
+				shift = 0;
+
+				display_picture();
+				rubyStolen = True;
+				sleep(10);
+			}
 		}
 		// printf("Red px: %d\n", redPx);
+		printf("time with variable: %c%c:%c%c\n", currentTime[11], currentTime[12], currentTime[14], currentTime[15]); 
 	}
 
   return 0;
